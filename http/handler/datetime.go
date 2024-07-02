@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-func timeDateHandler(w http.ResponseWriter, r *http.Request) {
+func TimeDateHandler(w http.ResponseWriter, r *http.Request) {
 	if r.Method != "GET" {
 		http.Error(w, "Bad Request", http.StatusBadRequest)
 		return

@@ -15,7 +15,7 @@ func TestTimeDateHandler(t *testing.T) {
 		}
 
 		rr := httptest.NewRecorder()
-		handler := http.HandlerFunc(timeDateHandler)
+		handler := http.HandlerFunc(TimeDateHandler)
 
 		handler.ServeHTTP(rr, req)
 
@@ -35,7 +35,7 @@ func TestTimeDateHandler(t *testing.T) {
 		}
 
 		rr := httptest.NewRecorder()
-		handler := http.HandlerFunc(timeDateHandler)
+		handler := http.HandlerFunc(TimeDateHandler)
 
 		handler.ServeHTTP(rr, req)
 

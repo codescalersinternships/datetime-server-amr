@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  http-server:
+    container_name: http-server
+    build:
+      context: .
+      target: img1
+    ports:
+      - "8001:8000"
+  
+  gin-server:
+    container_name: gin-server
+    build:
+      context: .
+      target: img2
+    ports:
+      - "8002:8000"
