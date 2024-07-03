@@ -7,6 +7,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// TimeDateHandler takes gin context struct and handles a request to get current date and time
 func TimeDateHandler(c *gin.Context) {
 	if c.Request.Method != "GET" {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "Bad Request"})
