@@ -1,4 +1,4 @@
-package handler
+package ginhandler
 
 import (
 	"net/http"
@@ -12,7 +12,7 @@ func TimeDateHandler(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "Bad Request"})
 		return
 	}
-	if c.Request.URL.Path != "/" {
+	if c.Request.URL.Path != "/datetime" {
 		c.JSON(http.StatusNotFound, gin.H{"error": "Not Found"})
 		return
 	}

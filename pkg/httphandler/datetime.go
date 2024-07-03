@@ -1,4 +1,4 @@
-package handler
+package httphandler
 
 import (
 	"fmt"
@@ -8,10 +8,10 @@ import (
 
 func TimeDateHandler(w http.ResponseWriter, r *http.Request) {
 	if r.Method != "GET" {
-		http.Error(w, "Bad Request", http.StatusBadRequest)
+		http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
 		return
 	}
-	if r.URL.Path != "/" {
+	if r.URL.Path != "/datetime" {
 		http.NotFound(w, r)
 		return
 	}

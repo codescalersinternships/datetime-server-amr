@@ -1,4 +1,4 @@
-package handler
+package ginhandler
 
 import (
 	"net/http"
@@ -12,9 +12,9 @@ import (
 func TestTimeDateHandler(t *testing.T) {
 	t.Run("Valid URL", func(t *testing.T) {
 		r := gin.Default()
-		r.GET("/", TimeDateHandler)
+		r.GET("/datetime", TimeDateHandler)
 
-		req, err := http.NewRequest("GET", "/", nil)
+		req, err := http.NewRequest("GET", "/datetime", nil)
 		if err != nil {
 			t.Fatal(err)
 		}
@@ -37,7 +37,7 @@ func TestTimeDateHandler(t *testing.T) {
 
 	t.Run("Invalid URL", func(t *testing.T) {
 		r := gin.Default()
-		r.GET("/", TimeDateHandler)
+		r.GET("/datetime", TimeDateHandler)
 
 		req, err := http.NewRequest("GET", "/Invalid", nil)
 		if err != nil {

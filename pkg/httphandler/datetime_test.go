@@ -1,4 +1,4 @@
-package handler
+package httphandler
 
 import (
 	"net/http"
@@ -9,7 +9,7 @@ import (
 
 func TestTimeDateHandler(t *testing.T) {
 	t.Run("Valid URL", func(t *testing.T) {
-		req, err := http.NewRequest("GET", "/", nil)
+		req, err := http.NewRequest("GET", "/datetime", nil)
 		if err != nil {
 			t.Fatal(err)
 		}
