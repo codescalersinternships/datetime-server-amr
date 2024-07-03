@@ -14,7 +14,7 @@ services:
     container_name: gin-server
     build:
       context: .
-      dockerfile: ./gin/Dockerfile-gin
+      dockerfile: Dockerfile-gin
       target: ginserver
     ports:
       - "8002:8000"
