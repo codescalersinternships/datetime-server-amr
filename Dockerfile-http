@@ -1,0 +1,15 @@
+# Build Server
+FROM golang:1.22.4-alpine AS builder
+
+COPY . /app
+WORKDIR /app
+RUN go mod tidy
+RUN go build -o http cmd/http/main.go
+
+# Deploy gin server
+FROM alpine:latest AS httpserver
+
+WORKDIR /
+COPY --from=builder /app/http .
+EXPOSE 8000
+ENTRYPOINT ["/http"]

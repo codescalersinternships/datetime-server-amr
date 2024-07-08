@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  http-server:
+    container_name: http-server
+    build:
+      context: .
+      dockerfile: Dockerfile-http
+      target: httpserver
+    ports:
+      - "8001:8000"
+  
+  gin-server:
+    container_name: gin-server
+    build:
+      context: .
+      dockerfile: Dockerfile-gin
+      target: ginserver
+    ports:
+      - "8002:8000"
