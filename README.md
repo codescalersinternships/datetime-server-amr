@@ -13,17 +13,20 @@ go get github.com/codescalersinternships/datetime-server-amr
 ## Usage
 Use the Makefile to build and run the project.
 
-```go
-# to build the HTTP server
+to build the HTTP server
+```
 make build http
-
-# to build the Gin server
+```
+to build the Gin server
+```
 make build gin
-
-# to build the images
+```
+to build the images
+```
 make build images
-
-# to launch the containers
+```
+to launch the containers
+```
 make launch containers
 ```
 Access the (net/http) server endpoint:
